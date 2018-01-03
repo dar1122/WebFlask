@@ -23,20 +23,24 @@
 		<h1>欢迎来到无敌的网站！</h1>
 		<p>网站目前处于测试阶段</p>
         <p>{{ wtf.quick_form(form) }}</p>
-
-
-
-
-	</div>
+    </div>
 
         {% for message in get_flashed_messages() %}
         <div>
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" id="myModal">&times;</button>
+ <div id="myAlert" class="alert alert-warning">
+	<a href="#" class="close" data-dismiss="alert">&times;</a>
+	<strong>陌生人</strong>{{ message }}
+</div>
 
-         </div>
+        </div>
         {% endfor %}
     <img class="img-responsive center-block" src="../static/qrcode_for_gh_e8c36e77a63e_258.jpg">
 
     <h3 class="text-center">你可以通过扫二维码获得密码</h3>
+
+
+
+
+</div>
 {% endblock %}

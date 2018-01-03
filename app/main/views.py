@@ -13,9 +13,15 @@ def login():
         if session.get('name') == '刁盎然':
             return redirect("http://127.0.0.1:5000/main")
         else:
-            flash('你似乎并不认识我')
+            flash('你似乎并不是我的朋友')
     return render_template('login.html',name = session.get('name'),form = form)
+
+@main.route('/train',methods = ['GET','POST'])
+def train():
+    return render_template('train.html')
 
 @main.route('/main',methods = ['GET','POST'])
 def main():
     return render_template('main.html')
+
+

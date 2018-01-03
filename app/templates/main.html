@@ -1,2 +1,41 @@
 {% extends "daohangbase.html" %}
 {% block title %}无敌导航{% endblock %}
+{% block navbar %}
+    <div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle"
+         data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">LOGIN</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="/train">火车票</a></li>
+                <li><a href="/">词云</a></li>
+                <li><a href="/">其他</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="col-sm-6 col-md-3" >
+        <div class="thumbnail">
+            <img class="img-responsive center-block" src="../static/timg.jpg" width="350" height="250" alt="通用的占位符缩略图">
+            <div class="caption">
+                <h3 >Python入门</h3>
+                <p >重新复习python</p>
+                <p>
+                    <a href="#" class="btn btn-primary" role="button">
+                        进入
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

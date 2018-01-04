@@ -1,11 +1,20 @@
 {% extends "bootstrap/base.html" %}
-
+    <meta charset="utf-8">
 {% block title %}火车票{% endblock %}
 
 
 
+{% block body %}
 
-{% block navbar %}
+<script >
+function trainfun() {
+
+     document.getElementById("result").innerText= "dar";
+}
+
+</script>
+
+
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -17,6 +26,7 @@
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">LOGIN</a>
+
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -30,6 +40,7 @@
     <h2 class="text-center">火车票查询</h2>
 <img class="img-responsive center-block" src="../static/train.jpg">
 
+
 <div style="padding: 100px 800px 10px;">
 	<form class="bs-example bs-example-form" role="form">
 		<div class="input-group">
@@ -40,11 +51,16 @@
 		<div class="input-group">
             <span class="input-group-addon">终点站</span>
 			<input type="text" class="form-control" placeholder="请填写终点站名">
+
 		</div>
+        <br>
+        <button type="button" class="btn btn-default"  onclick="trainfun()" >查询</button>
 	</form>
     <br>
-    <button type="button" class="btn btn-default" data-dismiss="alert" id="select">查询</button>
+
 </div>
+<p  id="result" class="text-center" >结果</p>
+{{ info }}
 
 {% endblock %}
 

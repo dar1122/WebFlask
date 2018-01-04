@@ -1,24 +1,22 @@
 
 from . import main
 from flask import render_template,flash,redirect,session
-from datetime import datetime
-from .forms import NameForm
+import os
+from config import APP_STATIC_TXT
+
 
 
 @main.route('/',methods = ['GET','POST'])
 def login():
-    form = NameForm()
-    if form.validate_on_submit():
-        session['name'] = form.name.data
-        if session.get('name') == '刁盎然':
-            return redirect("http://127.0.0.1:5000/main")
-        else:
-            flash('你似乎并不是我的朋友')
-    return render_template('login.html',name = session.get('name'),form = form)
+    name1 = 'dar'
+    return render_template('login.html',name1=name1)
 
 @main.route('/train',methods = ['GET','POST'])
 def train():
-    return render_template('train.html')
+    with open(os.path.join(APP_STATIC_TXT,'info.txt')) as f:
+        s = f.readline()
+        f.close()
+    return render_template('train.html',info=s)
 
 @main.route('/main',methods = ['GET','POST'])
 def main():

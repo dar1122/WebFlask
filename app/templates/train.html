@@ -1,3 +1,5 @@
+
+
 {% extends "bootstrap/base.html" %}
     <meta charset="utf-8">
 {% block title %}火车票{% endblock %}
@@ -6,11 +8,31 @@
 
 {% block body %}
 
-<script >
-function trainfun() {
+<script>
+function trainfun()
+{
+    var xmlhttp;
+    if(window.XMLHttpRequest)
+    {
+        xmlhttp=new XMLHttpRequest();
+    }
+    else
+    {
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
 
-     document.getElementById("result").innerText= "dar";
+    xmlhttp.onreadystatechange=function ()
+    {
+        if(xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+            document.getElementById("result").innerHTML = xmlhttp.responseText;
+        }
+
+    }
+    xmlhttp.open("GET","../static/info.txt",true);
+    xmlhttp.send();
 }
+
 
 </script>
 
@@ -26,7 +48,6 @@ function trainfun() {
             <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">LOGIN</a>
-
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -41,26 +62,31 @@ function trainfun() {
 <img class="img-responsive center-block" src="../static/train.jpg">
 
 
-<div style="padding: 100px 800px 10px;">
+<div style="padding: 100px 700px 10px;">
 	<form class="bs-example bs-example-form" role="form">
 		<div class="input-group">
 			<span class="input-group-addon">始发站</span>
-			<input type="text" class="form-control" placeholder="请填写出发站名">
+			<input type="text" name="start_station" class="form-control" placeholder="请填写出发站名">
 		</div>
 		<br>
 		<div class="input-group">
             <span class="input-group-addon">终点站</span>
-			<input type="text" class="form-control" placeholder="请填写终点站名">
+			<input type="text" name="end_station" class="form-control" placeholder="请填写终点站名">
+		</div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">出发时间</span>
+			<input type="text" name="date" class="form-control" placeholder="请填写出发时间，格式yyyy-mm-dd">
 
 		</div>
         <br>
-        <button type="button" class="btn btn-default"  onclick="trainfun()" >查询</button>
+        <button type="button" class="btn btn-default"  onclick="trainfun()">查询</button>
 	</form>
     <br>
 
 </div>
 <p  id="result" class="text-center" >结果</p>
-{{ info }}
+
 
 {% endblock %}
 

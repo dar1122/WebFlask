@@ -1,0 +1,28 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<table>
+    <tr valign="top">
+        <td><img class="img-responsive center-block" src="../static/images/2.jpg"></td>
+        <td>
+            <h1>User: {{nickname}}</h1>
+            {% if user.about_me %}<p>{{user.about_me}}</p>{% endif %}
+            {% if user.last_seen %}<p><i>Last seen on: {{user.last_seen}}</i></p>{% endif %}
+            {% if user.id == g.user.id %}<p><a href="{{url_for('edit')}}">Edit</a></p>{% endif %}
+            <p>{{user.followers.count()}} followers |
+            {% if user.id == g.user.id %}
+                <a href="{{url_for('edit')}}">Edit your profile</a>
+            {% elif not g.user.is_following(user) %}
+                <a href="{{url_for('follow', username = user.username)}}">关注</a>
+            {% else %}
+                <a href="{{url_for('unfollow', username = user.nickname)}}">取消关注</a>
+            {% endif %}
+            </p>
+        </td>
+
+    </tr>
+</table>
+
+
+{% endblock %}

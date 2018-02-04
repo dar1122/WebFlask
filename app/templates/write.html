@@ -1,0 +1,63 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+
+{% block content %}
+  <div class="main-wrapper oh">
+
+
+    <section class="header-wrap bg-light">
+      <div class="container">
+        <div class="logo-container text-center">
+          <div class="logo-wrap">
+              <div class="instagram-feed text-center">
+                <h1>D A R ' S             </h1>
+                <h1>B L O G</h1>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="content-wrapper oh">
+
+      <!-- Content -->
+      <section class="section-wrap contact pt-mdm-60">
+        <div class="container relative">
+          <div class="text-center">
+            <h2 class="heading underline-title uppercase">写 文 章</h2>
+          </div>
+          <div class="row">
+
+
+              <!-- contact form -->
+              <div class="contact-form mt-30">
+                <form class="bs-example bs-example-form" action="" method="post" name="message">
+
+                  <div class="row row-16">
+                    <div class="col-md-4">
+                      <input name="title" id="title" type="text" placeholder="标 题">
+                    </div>
+
+                    <div class="col-md-4">
+                      <input name="subject" id="subject" type="text" placeholder="类 别">
+                    </div>
+
+                    <div class="col-md-12">
+                      <textarea name="comment" id="comment" placeholder="内 容" rows="8"></textarea>
+                    </div>
+                  </div>
+
+                  <input type="submit" class="btn btn-lg btn-color mt-20" value="提交" id="submit-message">
+                  <div id="msg" class="message"></div>
+                </form>
+              </div>
+
+            </div>
+          </div> <!-- end row -->
+
+
+      </section> <!-- end content -->
+    </div>
+  </div>
+{% endblock %}

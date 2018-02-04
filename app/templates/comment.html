@@ -1,0 +1,71 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="header-wrap hero-section bg-light">
+      <div class="container">
+        <div class="logo-container text-center">
+          <div class="logo-wrap">
+              <div class="instagram-feed text-center">
+                <h1>D A R ' S             </h1>
+                <h1>B L O G</h1>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content blog-standard">
+        <div class="container relative">
+            <div class="row">
+
+                <div class="col-md-9 post-content mb-50">
+                    <div class="heading-lines">
+                        <h3 class="widget-title heading">{{ name }}</h3>
+                    </div>
+                    <ul class="list-dividers" >
+                        <h5>{{ posts }}</h5>
+                     </ul>
+                </div>
+
+                <aside class="col-md-3 sidebar">
+                    <div class="widget about-blog text-center">
+                        <div class="heading-lines">
+                            <h3 class="widget-title heading">About Me</h3>
+                            <img src="../static/images/about_me.jpg" alt="">
+                            <p class="mb-20 mt-30">生活不止眼前的苟且，还有诗和远方</p>
+                            <p class="mb-20 mt-30"> 命运也许坎坷，活在当下倒不如继续奔波</p>
+                        </div>
+                    </div>
+                    <div class="widget categories">
+                        <div class="heading-lines">
+                            <h3 class="widget-title heading">文章</h3>
+                        </div>
+                        <ul class="list-dividers">
+                            <li>
+                                <a href="#">Python</a><span>(8)</span>
+                            </li>
+                            <li>
+                                <a href="#">Java</a><span>(14)</span>
+                            </li>
+                            <li>
+                                <a href="#">Movie</a><span>(5)</span>
+                            </li>
+                            <li>
+                                <a href="#">Music</a><span>(3)</span>
+                            </li>
+                            <li>
+                                <a href="#">Food</a><span>(7)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </aside>
+
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<!-- extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+   <section class="header-wrap hero-section bg-light">
+      <div class="container">
+        <div class="logo-container text-center">
+          <div class="logo-wrap">
+              <div class="instagram-feed text-center">
+                <h1>Sign In</h1>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div style="padding: 50px 500px 10px;">
+        <form class="bs-example bs-example-form" action="" method="post" name="login">
+            {{form.hidden_tag()}}
+            <h5 class="text-center">
+                    请输入用户名：<br>
+                {{form.username(size=80)}}<br>
+            </h5>
+            <h5 class="text-center">
+                    请输入密码：<br>
+                {{ form.password(size=80) }}<br>
+            </h5>
+            <h5 class="text-center">
+                    爱好：<br>
+                {{ form.about_me(size=80) }}<br>
+            </h5>
+
+            <p class="text-center"><input class="btn btn-lg btn-color mt-20" type="submit" value="注册"></p>
+
+        </form>
+    </div>
+    
+{% endblock %}

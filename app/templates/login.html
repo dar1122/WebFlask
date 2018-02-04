@@ -1,57 +1,33 @@
-
+<!-- extend from base layout -->
 {% extends "base.html" %}
-{% import"bootstrap/wtf.html" as wtf %}
 
-{% block head %}
-    <meta charset="utf-8">
-	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>body{ background: #ffb482 }
+{% block content %}
 
-    </style>
-{% endblock %}
-{% block body %}
-<script>
-function check() {
-    var x = document.forms["myform"]["fname"].value;
-    if (x != 'dar'){
-        alert("你似乎并不认识我");
-    }
-}
-</script>
+    <section class="header-wrap hero-section bg-light">
+      <div class="container">
+        <div class="logo-container text-center">
+          <div class="logo-wrap">
+              <div class="instagram-feed text-center">
+                <h1>L O G I N</h1>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<div style="padding: 50px 500px 10px;">
+    <form class="bs-example bs-example-form" action="" method="post" name="login">
+        {{form.hidden_tag()}}
+        <h5 class="text-center">
+                用户名：<br>
+            {{form.username(size=80)}}<br>
+        </h5>
+        <h5 class="text-center">
+                密码：<br>
+            {{ form.password(size=80) }}<br>
+        </h5>
+        <p >{{form.remember_me}}</p>
+        <p class="text-center"><input class="btn btn-lg btn-color mt-20" type="submit" value="登录"></p>
 
-<div class="container">
-    <img src="/app/templates/timg.png">
-	<div class="jumbotron">
-		<h1>欢迎来到无敌的网站！</h1>
-		<p>网站目前处于测试阶段</p>
-
-<div style="padding: 10px 10px 20px;">
-	<form  name="myform" class="bs-example bs-example-form" role="form" onsubmit="return check()" >
-
-			<span class="input-group-addon">请输入网站主人的名字</span>
-
-			<input type="text" name="fname" class="form-control" placeholder="主人姓名">
-
-        <br>
-    <input type="submit" class="btn btn-default"  value="进入">
-	</form>
-    <br>
-
-</div>
-    </div>
-
-
-    <img class="img-responsive center-block" src="../static/qrcode_for_gh_e8c36e77a63e_258.jpg">
-
-    <h3 class="text-center">你可以通过扫二维码获得密码</h3>
-
-
-
-
+    </form>
 </div>
 {% endblock %}

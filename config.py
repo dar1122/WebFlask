@@ -1,25 +1,9 @@
-#encoding=utf-8
 import os
-
-
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:123456@localhost/test?charset=utf8'
+SQLALCHEMY_TRACK_MODIFICATIONS = True
+CSRF_ENABLED = True
+SECRET_KEY = 'you-will-never-guess'
 
-class Config:
-    @staticmethod
-    def init_app(app):
-        pass
-class DevelopmentConfig(Config):
-    DEBUG = True
-
-class TestingConfig(Config):
-    TESTING = True
-
-
-Config = {
-    'development': DevelopmentConfig,
-    'testing': TestingConfig,
-    'default': DevelopmentConfig
-}
 

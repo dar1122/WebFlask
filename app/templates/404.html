@@ -1,11 +1,7 @@
+<!-- extend base layout -->
 {% extends "base.html" %}
 
-{% block title %}Flasky - Page Not Found{% endblock %}
-
-{% block page_content %}
-
-<div>
-    <h1>Youuuuuu Not Found</h1>
-
-</div>
+{% block content %}
+<h1>找不到此页面</h1>
+<p><a href="{{url_for('First')}}">返回</a></p>
 {% endblock %}

@@ -1,0 +1,3 @@
+[console_scripts]
+migrate3 = migrate3:main
+

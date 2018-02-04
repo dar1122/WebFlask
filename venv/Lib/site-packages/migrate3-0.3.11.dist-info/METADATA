@@ -1,0 +1,46 @@
+Metadata-Version: 2.0
+Name: migrate3
+Version: 0.3.11
+Summary: A simple language agnostic database migration tool
+Home-page: https://github.com/mylokin/migrate
+Author: Francis Asante
+Author-email: kofrasa@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Operating System :: POSIX
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Database
+Classifier: Topic :: Utilities
+
+
+Language agnostic database migration tool
+
+migrate
+=======
+
+A simple language agnostic database migration tool
+
+install
+-------
+::
+
+    $ pip install migrate
+
+usage
+-----
+::
+
+    usage: migrate [options] <command>
+
+See Readme_
+
+.. _Readme: https://github.com/migrate/migrate/blob/master/README.md
+
+
